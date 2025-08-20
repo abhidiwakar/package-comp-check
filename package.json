@@ -13,7 +13,7 @@
     "checker"
   ],
   "author": "abhishek88666kumar@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "npm-registry-fetch": "^19.0.0",
     "semver": "^7.7.2"
