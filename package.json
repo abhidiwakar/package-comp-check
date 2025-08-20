@@ -1,0 +1,21 @@
+{
+  "name": "package-comp-check",
+  "version": "1.0.0",
+  "description": "A CLI tool that finds the latest compatible version of any npm package for your project's current React version.",
+  "main": "bin/index.js",
+  "bin": {
+    "package-comp-check": "bin/index.js"
+  },
+  "keywords": [
+    "npm",
+    "package",
+    "compatibility",
+    "checker"
+  ],
+  "author": "abhishek88666kumar@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "npm-registry-fetch": "^19.0.0",
+    "semver": "^7.7.2"
+  }
+}
