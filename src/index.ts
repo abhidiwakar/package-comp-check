@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const { getCompatibleVersion } = require("./core");
-const pkg = require("../package.json");
+import { getCompatibleVersion } from "./core";
+import * as pkg from "../package.json";
 
 const args = process.argv.slice(2);
 const isDebug = args.includes("--debug");
@@ -54,6 +54,6 @@ getCompatibleVersion(pkgName, "latest")
       );
     }
   })
-  .catch((err) => {
+  .catch((err: Error) => {
     console.error("Error:", err.message);
   });

@@ -1,11 +1,29 @@
-const fs = require("fs");
-const path = require("path");
-const fetch = require("npm-registry-fetch");
-const semver = require("semver");
+import * as fs from 'fs';
+import * as path from 'path';
+import fetch from 'npm-registry-fetch';
+import * as semver from 'semver';
 
-async function getInstalledReactVersion() {
+interface PackageJson {
+  dependencies?: Record<string, string>;
+  devDependencies?: Record<string, string>;
+}
+
+interface PackageVersion {
+  peerDependencies?: Record<string, string>;
+}
+
+interface PackageInfo {
+  versions: Record<string, PackageVersion>;
+}
+
+interface CompatibleVersionResult {
+  reactVersion: string;
+  compatibleVersion: string | null;
+}
+
+export async function getInstalledReactVersion(): Promise<string> {
   const pkgPath = path.join(process.cwd(), "package.json");
-  const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
+  const pkg: PackageJson = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
 
   const reactVersion =
     (pkg.dependencies && pkg.dependencies.react) ||
@@ -13,15 +31,18 @@ async function getInstalledReactVersion() {
 
   if (!reactVersion) throw new Error("React is not installed in this project");
 
-  return semver.minVersion(reactVersion).version;
+  const minVersion = semver.minVersion(reactVersion);
+  if (!minVersion) throw new Error("Invalid React version format");
+  
+  return minVersion.version;
 }
 
-async function getPackageInfo(packageName) {
+export async function getPackageInfo(packageName: string): Promise<PackageInfo> {
   try {
     // Ensure proper URL encoding for scoped packages and special characters
     const encodedPackageName = encodeURIComponent(packageName);
-    return await fetch.json(`/${encodedPackageName}`);
-  } catch (error) {
+    return await fetch.json(`/${encodedPackageName}`) as PackageInfo;
+  } catch (error: any) {
     // Provide more detailed error information
     if (error.code === 'E404') {
       throw new Error(`Package "${packageName}" not found in npm registry.`);
@@ -35,7 +56,7 @@ async function getPackageInfo(packageName) {
   }
 }
 
-async function getCompatibleVersion(packageName, userInput) {
+export async function getCompatibleVersion(packageName: string, userInput: string): Promise<CompatibleVersionResult> {
   const reactVersion = await getInstalledReactVersion();
   const pkgInfo = await getPackageInfo(packageName);
 
@@ -50,10 +71,10 @@ async function getCompatibleVersion(packageName, userInput) {
     return { reactVersion, compatibleVersion: null };
   }
 
-  let index;
+  let index: number;
   if (userInput === "latest") {
     index = 0;
-  } else if (!isNaN(userInput)) {
+  } else if (!isNaN(Number(userInput))) {
     index = parseInt(userInput, 10) + 1; // shift index (0 => 2nd latest)
   } else {
     index = 0; // default to latest
@@ -68,5 +89,3 @@ async function getCompatibleVersion(packageName, userInput) {
     compatibleVersion: versions[index]
   };
 }
-
-module.exports = { getCompatibleVersion };
