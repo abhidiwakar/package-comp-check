@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/abhidiwakar/package-comp-check/compare/v2.1.0...v2.1.1) (2025-09-04)
+
+
+### Bug Fixes
+
+* remove npm publish from postrelease script in package.json ([a391cdb](https://github.com/abhidiwakar/package-comp-check/commit/a391cdb188065543ea62121f3cc8d94567ac9f9c))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
