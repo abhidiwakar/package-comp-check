@@ -18,9 +18,20 @@ async function getInstalledReactVersion() {
 
 async function getPackageInfo(packageName) {
   try {
-    return await fetch.json(`/${packageName}`);
-  } catch {
-    throw new Error(`Package "${packageName}" not found in npm registry.`);
+    // Ensure proper URL encoding for scoped packages and special characters
+    const encodedPackageName = encodeURIComponent(packageName);
+    return await fetch.json(`/${encodedPackageName}`);
+  } catch (error) {
+    // Provide more detailed error information
+    if (error.code === 'E404') {
+      throw new Error(`Package "${packageName}" not found in npm registry.`);
+    } else if (error.code === 'ENOTFOUND' || error.code === 'ECONNREFUSED') {
+      throw new Error(`Network error: Unable to connect to npm registry. Please check your internet connection.`);
+    } else if (error.status === 405) {
+      throw new Error(`Invalid package name "${packageName}". Package names must follow npm naming rules.`);
+    } else {
+      throw new Error(`Failed to fetch package "${packageName}": ${error.message}`);
+    }
   }
 }
 

@@ -3,9 +3,13 @@ const { getCompatibleVersion } = require("./core");
 const pkg = require("../package.json");
 
 const args = process.argv.slice(2);
+const isDebug = args.includes("--debug");
+
+// Filter out flags from package name
+const packageNameArgs = args.filter(arg => !arg.startsWith("--"));
 
 if (args.length === 0 || args.includes("--help")) {
-  console.log(`\nUsage: package-comp-check <package-name> [options]\n\nOptions:\n  --help     Show help information\n  --version  Show version number\n`);
+  console.log(`\nUsage: package-comp-check <package-name> [options]\n\nOptions:\n  --help     Show help information\n  --version  Show version number\n  --debug    Show debug information\n`);
   process.exit(0);
 }
 
@@ -14,11 +18,29 @@ if (args.includes("--version")) {
   process.exit(0);
 }
 
-const pkgName = args[0];
+const pkgName = packageNameArgs[0];
 
 if (!pkgName || pkgName.startsWith("--")) {
   console.error("Usage: package-comp-check <package-name>\nTry --help for more information.");
   process.exit(1);
+}
+
+// Basic validation for package names
+if (pkgName.length === 0) {
+  console.error("Error: Package name cannot be empty.");
+  process.exit(1);
+}
+
+// Check for common issues with scoped packages
+if (pkgName.startsWith("@") && !pkgName.includes("/")) {
+  console.error("Error: Scoped package names must include a slash (e.g., @scope/package-name).");
+  process.exit(1);
+}
+
+if (isDebug) {
+  console.log(`Debug: Package name received: "${pkgName}"`);
+  console.log(`Debug: URL encoded name: "${encodeURIComponent(pkgName)}"`);
+  console.log(`Debug: Is scoped package: ${pkgName.startsWith("@")}`);
 }
 
 getCompatibleVersion(pkgName, "latest")
