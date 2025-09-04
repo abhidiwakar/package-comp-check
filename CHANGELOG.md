@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/abhidiwakar/package-comp-check/compare/v2.0.0...v2.1.0) (2025-09-04)
+
+
+### Features
+
+* add .versionrc.json for versioning configuration ([ff7aa75](https://github.com/abhidiwakar/package-comp-check/commit/ff7aa75307661ee8042c4c6c5e010d0428a7b7b4))
+
 ## 2.0.0 (2025-09-04)
 
 
