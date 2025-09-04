@@ -1,3 +1,5 @@
+[![CI/CD](https://github.com/abhidiwakar/package-comp-check/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/abhidiwakar/package-comp-check/actions/workflows/ci-cd.yml)
+
 # package-comp-check
 
 A CLI utility to check which version of a package is compatible with the React version in your project.
