@@ -1,6 +1,6 @@
 {
   "name": "package-comp-check",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A CLI tool that finds the latest compatible version of any npm package for your project's current React version.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,7 +32,13 @@
     "test:watch": "jest --watch",
     "dev": "tsc --watch",
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix"
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "release:patch": "standard-version --release-as patch",
+    "release:dry": "standard-version --dry-run",
+    "postrelease": "git push --follow-tags origin master && npm publish"
   },
   "dependencies": {
     "npm-registry-fetch": "^19.0.0",
@@ -46,6 +52,7 @@
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.0.0",
     "jest": "^29.0.0",
+    "standard-version": "^9.5.0",
     "ts-jest": "^29.0.0",
     "typescript": "^5.0.0"
   },

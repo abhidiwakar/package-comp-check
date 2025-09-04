@@ -1,0 +1,17 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## 2.0.0 (2025-09-04)
+
+
+### Features
+
+* add CI/CD badge to README for better visibility of build status ([3bc83fc](https://github.com/abhidiwakar/package-comp-check/commit/3bc83fccae0b35b83fd94338580549815985c753))
+* enhance README with scoped package support and examples; improve error handling in core logic ([f62dfe1](https://github.com/abhidiwakar/package-comp-check/commit/f62dfe124d158ad6a28159c65e24afd47e57983b))
+* restructure project for TypeScript support and add CI/CD pipeline ([0340eaf](https://github.com/abhidiwakar/package-comp-check/commit/0340eaf2749ab147e8164e486736c0ca919824c6))
+
+
+### Bug Fixes
+
+* update license from ISC to MIT in package.json ([e54b11d](https://github.com/abhidiwakar/package-comp-check/commit/e54b11d3800f709a1676ab9cb867768db0b99b38))
