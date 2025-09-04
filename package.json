@@ -38,7 +38,7 @@
     "release:major": "standard-version --release-as major",
     "release:patch": "standard-version --release-as patch",
     "release:dry": "standard-version --dry-run",
-    "postrelease": "git push --follow-tags origin master && npm publish"
+    "postrelease": "git push --follow-tags origin master"
   },
   "dependencies": {
     "npm-registry-fetch": "^19.0.0",
