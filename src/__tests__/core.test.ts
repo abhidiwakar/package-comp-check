@@ -1,4 +1,4 @@
-describe("package-comp-check", () => {
+describe("@cornflea/pcc", () => {
   test("should validate package name format", () => {
     // Test basic package name validation
     const validPackage = "react";

@@ -1,6 +1,6 @@
 [![CI/CD](https://github.com/abhidiwakar/package-comp-check/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/abhidiwakar/package-comp-check/actions/workflows/ci-cd.yml)
 
-# package-comp-check
+# @cornflea/pcc
 
 A CLI utility to check which version of a package is compatible with the React version in your project.
 
@@ -14,13 +14,13 @@ A CLI utility to check which version of a package is compatible with the React v
 ## Installation
 
 ```bash
-npm install -g package-comp-check
+npm install -g @cornflea/pcc
 ```
 
 ## Usage
 
 ```bash
-package-comp-check <package-name>
+pcc <package-name>
 ```
 
 ### Options
@@ -32,16 +32,16 @@ package-comp-check <package-name>
 
 ```bash
 # Regular package
-package-comp-check zustand
+pcc zustand
 
 # Scoped package
-package-comp-check @mui/material
+pcc @mui/material
 
 # TypeScript types
-package-comp-check @types/react
+pcc @types/react
 
 # With debug information
-package-comp-check @emotion/react --debug
+pcc @emotion/react --debug
 ```
 
 ## Scoped Packages
@@ -58,21 +58,21 @@ If you encounter issues with scoped packages, try these troubleshooting steps:
 
 1. **Use quotes around the package name:**
    ```bash
-   package-comp-check "@mui/material"
+   pcc "@mui/material"
    ```
 
 2. **Check for typos in the scope or package name:**
    ```bash
    # ❌ Incorrect
-   package-comp-check @mui
+   pcc @mui
    
    # ✅ Correct
-   package-comp-check @mui/material
+   pcc @mui/material
    ```
 
 3. **Use debug mode to see what's being processed:**
    ```bash
-   package-comp-check @mui/material --debug
+   pcc @mui/material --debug
    ```
 
 4. **Verify the package exists on npm:**

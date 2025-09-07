@@ -1,11 +1,11 @@
 {
-  "name": "package-comp-check",
+  "name": "@cornflea/pcc",
   "version": "2.1.1",
   "description": "A CLI tool that finds the latest compatible version of any npm package for your project's current React version.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "package-comp-check": "dist/index.js"
+    "pcc": "dist/index.js"
   },
   "files": [
     "dist/**/*",
