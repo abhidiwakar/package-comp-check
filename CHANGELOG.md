@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/abhidiwakar/package-comp-check/compare/v3.0.0...v3.0.1) (2025-09-07)
+
+
+### Bug Fixes
+
+* update npm publish configuration to ensure public access ([a5aaf7c](https://github.com/abhidiwakar/package-comp-check/commit/a5aaf7c2e96ce8a64c599ba15bb30f21c3905351))
+
 # [3.0.0](https://github.com/abhidiwakar/package-comp-check/compare/v2.1.1...v3.0.0) (2025-09-07)
 
 
