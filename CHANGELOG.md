@@ -1,3 +1,20 @@
+# [4.0.0](https://github.com/abhidiwakar/package-comp-check/compare/v3.0.1...v4.0.0) (2025-09-07)
+
+
+* feat!: rename package from @cornflea/pcc to @cornflea/react-pcc ([06c4bf6](https://github.com/abhidiwakar/package-comp-check/commit/06c4bf6dc63a9f27ebc93587d8fd2870b071521c))
+
+
+### BREAKING CHANGES
+
+* Package name changed from @cornflea/pcc to @cornflea/react-pcc for better clarity and consistency with the CLI command.
+
+- Package installation command changed from `npm install -g @cornflea/pcc` to `npm install -g @cornflea/react-pcc`
+- CLI command remains `react-pcc` (unchanged)
+- Users must uninstall the old package and install the new one
+- All references to @cornflea/pcc in package.json, documentation, and import statements need to be updated
+
+This change provides better discoverability and makes the package purpose immediately clear from the name.
+
 ## [3.0.1](https://github.com/abhidiwakar/package-comp-check/compare/v3.0.0...v3.0.1) (2025-09-07)
 
 
