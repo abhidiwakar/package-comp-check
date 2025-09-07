@@ -1,3 +1,20 @@
+# [3.0.0](https://github.com/abhidiwakar/package-comp-check/compare/v2.1.1...v3.0.0) (2025-09-07)
+
+
+* feat!: rename CLI command to react-pcc and enhance test suite ([8d5cc8e](https://github.com/abhidiwakar/package-comp-check/commit/8d5cc8ef9b9ee8b201752cb01ee47b414f5d395d))
+
+
+### BREAKING CHANGES
+
+* - CLI command changed from 'pcc' to 'react-pcc'
+- Users must update any scripts or documentation referencing the old command
+- Package maintains same installation process but execution command is different
+
+Additional changes:
+- Added comprehensive test suite with 12 test cases covering package validation, URL encoding, and version compatibility
+- Enhanced package name validation and edge case handling
+- Improved error messages and usage instructions
+
 ## [2.1.1](https://github.com/abhidiwakar/package-comp-check/compare/v2.1.0...v2.1.1) (2025-09-04)
 
 
