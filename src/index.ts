@@ -9,7 +9,7 @@ const isDebug = args.includes("--debug");
 const packageNameArgs = args.filter(arg => !arg.startsWith("--"));
 
 if (args.length === 0 || args.includes("--help")) {
-  console.log(`\nUsage: pcc <package-name> [options]\n\nOptions:\n  --help     Show help information\n  --version  Show version number\n  --debug    Show debug information\n`);
+  console.log(`\nUsage: react-pcc <package-name> [options]\n\nOptions:\n  --help     Show help information\n  --version  Show version number\n  --debug    Show debug information\n`);
   process.exit(0);
 }
 
@@ -21,7 +21,7 @@ if (args.includes("--version")) {
 const pkgName = packageNameArgs[0];
 
 if (!pkgName || pkgName.startsWith("--")) {
-  console.error("Usage: pcc <package-name>\nTry --help for more information.");
+  console.error("Usage: react-pcc <package-name>\nTry --help for more information.");
   process.exit(1);
 }
 

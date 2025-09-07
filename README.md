@@ -20,7 +20,7 @@ npm install -g @cornflea/pcc
 ## Usage
 
 ```bash
-pcc <package-name>
+react-pcc <package-name>
 ```
 
 ### Options
@@ -32,16 +32,16 @@ pcc <package-name>
 
 ```bash
 # Regular package
-pcc zustand
+react-pcc zustand
 
 # Scoped package
-pcc @mui/material
+react-pcc @mui/material
 
 # TypeScript types
-pcc @types/react
+react-pcc @types/react
 
 # With debug information
-pcc @emotion/react --debug
+react-pcc @emotion/react --debug
 ```
 
 ## Scoped Packages
@@ -58,21 +58,21 @@ If you encounter issues with scoped packages, try these troubleshooting steps:
 
 1. **Use quotes around the package name:**
    ```bash
-   pcc "@mui/material"
+   react-pcc "@mui/material"
    ```
 
 2. **Check for typos in the scope or package name:**
    ```bash
    # ❌ Incorrect
-   pcc @mui
+   react-pcc @mui
    
    # ✅ Correct
-   pcc @mui/material
+   react-pcc @mui/material
    ```
 
 3. **Use debug mode to see what's being processed:**
    ```bash
-   pcc @mui/material --debug
+   react-pcc @mui/material --debug
    ```
 
 4. **Verify the package exists on npm:**
