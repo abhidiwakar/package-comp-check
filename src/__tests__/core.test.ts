@@ -1,4 +1,4 @@
-describe("@cornflea/pcc", () => {
+describe("@cornflea/react-pcc", () => {
   describe("Package name validation", () => {
     test("should validate basic package names", () => {
       const validPackages = ["react", "lodash", "express", "moment"];

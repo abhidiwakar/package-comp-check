@@ -1,6 +1,6 @@
 [![CI/CD](https://github.com/abhidiwakar/package-comp-check/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/abhidiwakar/package-comp-check/actions/workflows/ci-cd.yml)
 
-# @cornflea/pcc
+# @cornflea/react-pcc
 
 A CLI utility to check which version of a package is compatible with the React version in your project.
 
@@ -14,7 +14,7 @@ A CLI utility to check which version of a package is compatible with the React v
 ## Installation
 
 ```bash
-npm install -g @cornflea/pcc
+npm install -g @cornflea/react-pcc
 ```
 
 ## Usage
